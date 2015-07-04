@@ -6,8 +6,6 @@ This application illustrates how to use the hoodie_plugin_email_verifier Hoodie 
 
 * First, this sample is *REALLY* intended for people familiar with Hoodie.  But if you are not, please start with the intro Hoodie docs to install Hoodie and its dependencies: [install guides for OS X, Linux and Windows](http://hood.ie/#installation).
 * Clone this repository to your computer
-* Install the hoodie-plugin-email plugin:  
-  * hoodie install hoodie-plugin-email
 * npm install
 * Run:
   * hoodie start
