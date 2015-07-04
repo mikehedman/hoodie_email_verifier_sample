@@ -13,7 +13,7 @@ This application illustrates how to use the hoodie_plugin_email_verifier Hoodie 
 
 ## Programming notes
 
-This app has three blocks of code that have been added to the Hoodie default application.  You can see these blocks in context by looking at commit XXX (insert link here).  
+This app has three blocks of code that have been added to the Hoodie default application.  You can see these blocks in context by looking at [commit 56215d18988f1ea65e4234667cbf047a90ed4d9c](https://github.com/mikehedman/hoodie_email_verifier_sample/commit/56215d18988f1ea65e4234667cbf047a90ed4d9c).  
 Below is a brief overview of the additions:
 * Added [hoodie-plugin-email-verifier plugin](https://github.com/mikehedman/hoodie-plugin-email-verifier).  This plugin adds server side functionality to mark a newly signed up user as unconfirmed, sends the user an email with a verification link, and switches the user to confirmed when the link is clicked.
 * www/assets/vendor/hoodie.accountbar.bootstrap.js: Added a 'progress' callback to close the signup modal dialog once the user account has been created (but not yet confirmed).  This block of code is really just a workaround, because prior to the release of Hoodie 1.0, the user confirmation process is somewhat poorly defined and there is not a "proper" way for Hoodie to signal client code that the new user still needs to be confirmed. 
