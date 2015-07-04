@@ -97,3 +97,13 @@ $('#todoinput').on('keypress', function(event) {
     event.target.value = '';
   }
 });
+
+//Code to handle when we arrive back at the app after the user has confirmed their email address
+$(function() {
+  if (window.location.hash == '#confirmed' && !hoodie.account.username) {
+    //remove the word 'confirmed' from the url to keep things tidy
+    window.location.hash = '';
+
+    $('.hoodie-account-signedout [data-hoodie-action="signin"]').click();
+  }
+});

@@ -134,6 +134,30 @@
             break;
         }
 
+        magic.progress(function(progressMessage) {
+          //make sure its the right event we heard - really this should be handled separately from the other 'magic' things
+          if (progressMessage.id) {
+            $modal.find('.alert').remove();
+            $modal.modal('hide');
+
+            //do a little yield to let the signup modal get closed
+            setTimeout(function() {
+              var handleModalClose = function() {
+                //now we just reload the page because the delayedSignIn function will be endlessly looping
+                window.location = '/';
+              };
+              var $form = $.modalForm({
+                title: 'Awaiting verification',
+                fields: [],
+                submit: 'OK'
+              });
+              //in case they close the dialog by the 'X' button
+              $form.on('click.dismiss.bs.modal', '[data-dismiss="modal"]', handleModalClose);
+              $form.on('submit', handleModalClose);
+              $form.trigger('error', {message: 'Your account has been created. Please check your email and click on the embedded link to verify your account.'});
+            }, 300);
+          }
+        });
         magic.done(function() {
           $modal.find('.alert').remove();
           $modal.modal('hide');

@@ -10,6 +10,7 @@
   "dependencies": {
     "hoodie-plugin-appconfig": "^2.0.1",
     "hoodie-plugin-email": "^1.0.0",
+    "hoodie-plugin-email-verifier": "^1.0.1",
     "hoodie-plugin-users": "^2.2.2",
     "hoodie-server": "^4.0.1"
   },
@@ -23,7 +24,8 @@
     "plugins": [
       "hoodie-plugin-appconfig",
       "hoodie-plugin-email",
-      "hoodie-plugin-users"
+      "hoodie-plugin-users",
+      "hoodie-plugin-email-verifier"
     ]
   },
   "scripts": {
